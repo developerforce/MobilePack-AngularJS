@@ -1,0 +1,53 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+
+<div class="span4 well">
+    <div class="row">
+        <div class="span4">
+            <table>
+                <tr>
+                    <td rowspan="2" style="padding-right: 20px;">
+                        <img width="64" src="{!URLFOR($Resource.MobileSample_Resources_Angular, 'resources/img/profile.png')}" alt="Dave Carroll" data-user-id="7688502" />
+                    </td>
+                    <td>
+				    	<b style="width: 200px;" class="fullname">{{contact.FirstName}} {{contact.LastName}}</b>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+					    <small class="metadata">{{contact.Title}}</small>
+                    </td>
+                </tr>
+            </table>
+	    </div>
+    </div>
+    <div class="row">
+        <div class="span3 offset1">
+            <b class="fullname">Email</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3 offset1">
+            <a href="mailto:{{contact.Email}}">{{contact.Email}}</a>
+        </div>
+    </div>
+    <div class="row">
+       	<div class="span3 offset1">
+            <b class="fullname">Phone</b>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span3 offset1">
+            <a href="tel:{{contact.Phone}}">{{contact.Phone}}</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="span1">
+	        <a class="btn" style="margin-top: 10px;" href="#/edit/{{contact.Id}}">Edit</a>
+        </div>
+        <div class="span3">
+	        <a class="btn btn-primary" style="margin-top: 10px;" href="#/contacts">Back to Contacts</a>
+	    </div>
+    </div>
+</div>
+
+</apex:page>

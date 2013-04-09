@@ -1,0 +1,45 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<form class="well" name="myForm">
+    <div class="control-group" ng-class="{error: myForm.Name.$invalid}">
+        <label>First Name</label>
+        <input type="text" name="FirstName" ng-model="contact.FirstName" />
+        <span ng-show="myForm.FirstNameName.$error.required" class="help-inline">
+        Required</span>
+
+        <label>Last Name</label>
+        <input type="text" name="LastName" ng-model="contact.LastName" required="true" />
+        <span ng-show="myForm.LastName.$error.required" class="help-inline">
+        Required</span>
+
+        <label>Title</label>
+        <input type="text" name="Title" ng-model="contact.Title" />
+        <span ng-show="myForm.Title.$error.required" class="help-inline">
+        Required</span>
+
+        <label>Email</label>
+        <input type="text" name="Email" ng-model="contact.Email" />
+        <span ng-show="myForm.Email.$error.required" class="help-inline">
+        Required</span>
+
+
+        <label>Phone</label>
+        <input type="text" name="Phone" ng-model="contact.Phone" />
+        <span ng-show="myForm.Phone.$error.required" class="help-inline">
+        Required</span>
+
+        <input disabled="disabled" type="hidden" name="Id" ng-model ="contact.Id" />
+    </div>
+
+
+    <p style='text-align: center;padding-bottom: 30px;padding-top: 40px;'>
+        <button ng-click="save()" ng-disabled="isClean() || myForm.$invalid"
+                class="btn btn-primary">Save
+        </button>
+        <button ng-click="destroy()"
+                ng-show="contact.Id" class="btn btn-danger">Delete
+        </button>
+        <button ng-click="doCancel()" class="btn">Cancel</button>
+    </p>
+
+</form>
+</apex:page>

@@ -1,0 +1,67 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+<div ng-show="isWorking()">
+    <p>Working</p>
+</div>
+
+<div ng-show="!isWorking()">
+    <!-- This div is only displayed in desktops (see below for mobile phones)-->
+    <div class="hidden-phone">
+        <div style="float: left">
+            <div style="margin-bottom: 10px;">
+                <input type="text" ng-model="searchTerm" class="search-query" placeholder="Search" />
+
+                <p class="btn btn-primary" ng-click="doSearch(searchString)">Go</p>
+            </div>
+        </div>
+
+        <div style="float: right">
+            <a href="#/new" class="btn btn-primary">New</a>
+        </div>
+
+
+        <table width="80%" class="table">
+            <thead>
+            <tr>
+                <th class='hidden-phone'>Id</th>
+                <th>Full Name</th>
+                <th>Company</th>
+                <th class='hidden-phone'>Title</th>
+                <th>Phone</th>
+                <th class='hidden-phone'>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            <tr ng-repeat="contact in contacts">
+                <td class='hidden-phone'>{{contact.Id}}</td>
+                <td><a href="#/view/{{contact.Id}}">{{contact.FirstName}} {{contact.LastName}}</a></td>
+                <td>{{contact.Account.Name}}</td>
+                <td class='hidden-phone'>{{contact.Title}}</td>
+                <td>{{contact.Phone}}</td>
+                <td class='hidden-phone'>{{contact.Email}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- This div is only displayed in mobile phones (see above for desktops) -->
+    <div class="visible-phone">
+        <form class="form-inline">
+            <input type="text" ng-model="searchTerm" class="input-medium search-query" placeholder="Search" />
+            <button ng-click="doSearch(searchString)" class="btn btn-primary">Go</button>
+            <button ng-click="doCreate()" class="btn btn-default">&nbsp;+&nbsp;</button>
+        </form>
+
+        <table class="table">
+            <tr ng-click="doView(contact.Id)" ng-repeat="contact in contacts">
+                <td><b class="fullname">{{contact.FirstName}} {{contact.LastName}}</b>
+                    <br />
+                    <small class="metadata">{{contact.Account.Name}}</small>
+                </td>
+                <td><i class="icon-chevron-right"></i></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+</apex:page>

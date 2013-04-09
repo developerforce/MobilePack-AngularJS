@@ -164,7 +164,7 @@ angular.module('AngularForceObjectFactory', []).factory('AngularForceObjectFacto
         var fieldsArray = angular.isArray(params.fields) ? params.fields : [];
 
         //Make it soql compliant
-        fields = fields && fields.length > 0 ? fields.join(', ') : '';
+        fields = fields && fields.length > 0 ? fields.join(',') : '';
         where = where && where != '' ? ' where ' + where : '';
         limit = limit && limit != '' ? ' LIMIT ' + limit : 'LIMIT 25';
         orderBy = orderBy && orderBy != '' ? ' ORDER BY ' + orderBy : '';
@@ -198,12 +198,12 @@ angular.module('AngularForceObjectFactory', []).factory('AngularForceObjectFacto
         /************************************
          * CRUD operations
          ************************************/
-        AngularForceObject.prototype.update = function (cb) {
-            return AngularForceObject.update(this, cb);
+        AngularForceObject.prototype.update = function (successCB, failureCB) {
+            return AngularForceObject.update(this, successCB, failureCB);
         };
 
-        AngularForceObject.prototype.destroy = function (cb) {
-            return AngularForceObject.remove(this, cb);
+        AngularForceObject.prototype.destroy = function (successCB, failureCB) {
+            return AngularForceObject.remove(this, successCB, failureCB);
         };
 
         AngularForceObject.query = function (successCB, failureCB) {

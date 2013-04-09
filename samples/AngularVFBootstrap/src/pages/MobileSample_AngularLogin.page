@@ -1,0 +1,9 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+ <div class="span4 well">
+   <p style='text-align: center;padding-bottom: 30px;'>
+       <button class="btn btn-large btn-primary" ng-click="login()">Login With Salesforce</button>
+   </p>
+
+   <div ng-include="'partials/_about.html'"></div>
+</div>
+</apex:page>

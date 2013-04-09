@@ -112,11 +112,12 @@ function ContactDetailCtrl($scope, AngularForce, $location, $routeParams, Contac
 
     if ($routeParams.contactId) {
         AngularForce.login(function () {
-            Contact.get({id: $routeParams.contactId}, function (contact) {
-                self.original = contact;
-                $scope.contact = new Contact(self.original);
-                $scope.$apply();//Required coz sfdc uses jquery.ajax
-            });
+            Contact.get({id: $routeParams.contactId}, 
+                function (contact) {
+                    self.original = contact;
+                    $scope.contact = new Contact(self.original);
+                    $scope.$apply();//Required coz sfdc uses jquery.ajax
+                });
         });
     } else {
         $scope.contact = new Contact();
@@ -134,8 +135,8 @@ function ContactDetailCtrl($scope, AngularForce, $location, $routeParams, Contac
                     $location.path('/contacts');
                 });
             },
-            function () {
-                console.log('delete error');
+            function(errors) {
+                alert("Could not delete contact!\n" + JSON.parse(errors.responseText)[0].message);
             }
         );
     };

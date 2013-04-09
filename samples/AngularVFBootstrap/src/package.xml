@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AngularMobilePack</fullName>
+    <types>
+        <members>MobileSample_AngularDetail</members>
+        <members>MobileSample_AngularEdit</members>
+        <members>MobileSample_AngularHome</members>
+        <members>MobileSample_AngularIndex</members>
+        <members>MobileSample_AngularList</members>
+        <members>MobileSample_AngularLogin</members>
+        <members>MobileSample_AngularView</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>Angular_Mobile_Pack</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Angular_Contacts</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Package</members>
+        <members>Package/AngularIcon.png</members>
+        <name>Document</name>
+    </types>
+    <types>
+        <members>MobileSample_Resources_Angular</members>
+        <name>StaticResource</name>
+    </types>
+    <version>25.0</version>
+</Package>

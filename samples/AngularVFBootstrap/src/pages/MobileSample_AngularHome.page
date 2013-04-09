@@ -1,0 +1,25 @@
+<apex:page showHeader="false" sidebar="false" standardStylesheets="false">
+
+<div class="container">
+    <div class="span4 well">
+        <p style='text-align: center;padding-bottom: 30px;'>
+            <button class="btn btn-large btn-primary" ng-click="viewContacts()">View Contacts</button>
+        </p>
+        <p>This is a Mobile Pack Demo. <a href="https://github.com/rajaraodv/SFAngularBootStrap">Learn more</a>.</p>
+
+        <p>Built with <a href="http://angularjs.org">AngularJS</a> and <a href="http://twitter.github.com/bootstrap">Twitter Bootstrap</a>.
+        </p>
+
+        <p>Designed for use with your <a
+                href="http://www.developerforce.com/events/regular/registration.php?d=70130000000EjHb">Salesforce
+            Developer Edition</a>.</p>
+
+        <p>Built by<br />
+            <a style="margin-left: 20px;" href="http://twitter.com/ReidCarlberg">Reid Carlberg</a><br/> 
+            <a style="margin-left: 20px;" href="http://twitter.com/rajaraodv">Raja Rao DV</a><br/>
+	        <a style="margin-left: 20px;" href="http://twitter.com/dcarroll">Dave Carroll</a>
+        </p>
+    </div>
+</div>
+
+</apex:page>
