@@ -112,6 +112,7 @@ angular.module('AngularForce', []).
         this.oauthCallback = function (callbackString) {
             var ftkClientUI = getForceTKClientUI();
             ftkClientUI.oauthCallback(callbackString);
+            this.refreshToken = localStorage.getItem('ftkui_refresh_token');
         };
 
         this.logout = function (callback) {
@@ -245,6 +246,9 @@ angular.module('AngularForceObjectFactory', []).factory('AngularForceObjectFacto
             return SFConfig.client.search(s, successCB, failureCB);
         };
 
+        AngularForceObject.searchCustom = function (sosl, successCB, failureCB) {
+            return SFConfig.client.search(sosl, successCB, failureCB);
+        };        
 
         AngularForceObject.get = function (params, successCB, failureCB) {
             return SFConfig.client.retrieve(type, params.id, fieldsArray, function (data) {

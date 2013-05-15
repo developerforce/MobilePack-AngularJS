@@ -131,6 +131,7 @@
             console.log('logging out');
 
             //Remove localstorage item
+            console.log('should be removing ftkui_refresh_token');
             localStorage.removeItem('ftkui_refresh_token');
 
             var url = this.instanceUrl + '/services/oauth2/revoke';
@@ -208,7 +209,7 @@
                     console.log('ERROR: No OAuth response!')
 
             } else {
-
+                //console.log('ui - refresh' + oauthResponse.refresh_token);
                 localStorage.setItem('ftkui_refresh_token', oauthResponse.refresh_token);
 
                 this.client.setRefreshToken(oauthResponse.refresh_token);

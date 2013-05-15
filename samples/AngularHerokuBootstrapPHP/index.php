@@ -19,13 +19,10 @@ if(file_exists('../local.settings.php'))
     </style>
     <link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.5/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.6/angular.js"></script>
     <script type="text/javascript">
-        var app = angular.module('AngularSFDemo', ['AngularForce', 'AngularForceObjectFactory', 'Contact']);
+        var app = angular.module('AngularSFDemo', ['AngularForce', 'AngularForceObjectFactory', 'Contact', 'Account']);
 
-        app.config(function($compileProvider){
-            $compileProvider.urlSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
-        });
 
         <?
             $appUrl = $_ENV['app_url'];
@@ -41,17 +38,17 @@ if(file_exists('../local.settings.php'))
             });  
 
     </script>
-<script src="js/app.js"></script>
-<script src="js/angular-force.js"></script>
-
-<script src="js/forcetk.js"></script>
-<script src="js/forcetk.ui.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/angular-force.js"></script>
+    <script src="js/forcetk.js"></script>
+    <script src="js/forcetk.ui.js"></script>
 </head>
 <body>
 <div class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-inner">
         <div class="container">
-            <a class="brand" href="#">Salesforce Contacts</a>
+            <a class="btn" href="#/home">Home</a>
+            <a class="brand" href="#/home">Salesforce Contacts</a>
         </div>
     </div>
 </div>
@@ -59,6 +56,13 @@ if(file_exists('../local.settings.php'))
     <div ng-view></div>
 </div>
 
+<div class="navbar navbar-inverse navbar-fixed-bottom">
+    <div class="navbar-inner">
+        <div class="container">
+            Last Update: 15 May 2013 RSC
+        </div>
+    </div>    
+</div>
 
 
 

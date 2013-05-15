@@ -1,0 +1,15 @@
+<!-- This page is displayed when the user clicks logout button. It opens up a hidden logout.jsp to perform secure logout
+in addition to AngularForce.logout function (which calls REST api's revoke endpoint)
+-->
+<div ng-controller="LoginCtrl">
+    <br/>
+    <strong> Logging out..</strong>
+    <iframe src="https://login.salesforce.com/secur/logout.jsp" style='display:none;'>
+
+    </iframe>
+    <script>
+        setTimeout(function () {
+            location.href = '/';
+        }, 4000);
+    </script>
+</div>
