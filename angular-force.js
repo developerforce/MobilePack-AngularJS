@@ -212,7 +212,7 @@ angular.module('AngularForceObjectFactory', []).factory('AngularForceObjectFacto
         //Make it soql compliant
         fields = fields && fields.length > 0 ? fields.join(', ') : '';
         where = where && where != '' ? ' where ' + where : '';
-        limit = limit && limit != '' ? ' LIMIT ' + limit : 'LIMIT 25';
+        limit = limit && limit != '' ? ' LIMIT ' + limit : ' LIMIT 25';
         orderBy = orderBy && orderBy != '' ? ' ORDER BY ' + orderBy : '';
 
         //Construct SOQL
